@@ -9,11 +9,18 @@ header {
     }
 }
 
+td:first-child {
+    width: 40%;
+}
+
 td:nth-child(2) {
     width: 30%;
 }
 
+th:nth-child(3),
+td:nth-child(3),
 th:last-child,
 td:last-child {
+    width: 15%;
     text-align: center;
 }
