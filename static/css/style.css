@@ -8,3 +8,12 @@ header {
         font-size: 2.5em;
     }
 }
+
+td:nth-child(2) {
+    width: 30%;
+}
+
+th:last-child,
+td:last-child {
+    text-align: center;
+}
