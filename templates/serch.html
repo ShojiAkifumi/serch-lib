@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP" rel="stylesheet">
+    <link rel="stylesheet" href="static/css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>図書検索エンジン</title>
+</head>
+
+<body>
+    <header class="teal cyan lighten-3 z-depth-2">
+        <div class="container">
+            <a class="waves-effect waves-light btn-large" href="/">再検索</a>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <h1 class="grey-text">図書検索エンジン</h1>
+            <div class="card-panel">
+                <table class="highlight responsive-table">
+                    <thead>
+                        <tr>
+                            <th>書籍名</th>
+                            <th>著者</th>
+                            <th>カテゴリー</th>
+                            <th>詳細</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for book in data %}
+                        <tr>
+                            <td>{{ book.title }}</td>
+                            <td>{{ book.author }}</td>
+                            <td>{{ book.category }}</td>
+                            <td><a href="{{ book.url }}">詳細</a></td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+
+</html>
