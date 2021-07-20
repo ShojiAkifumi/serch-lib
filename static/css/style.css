@@ -3,24 +3,54 @@ header {
     text-align: right;
 }
 
-@media(max-width:768px) {
+h1 {
+    font-size: 2.2em;
+}
+
+@media(min-width:768px) {
     h1 {
-        font-size: 2.5em;
+        font-size: 3.2em;
     }
 }
 
-td:first-child {
-    width: 40%;
+.book-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100px;
 }
 
-td:nth-child(2) {
-    width: 30%;
+img {
+    max-width: 100%;
 }
 
-th:nth-child(3),
-td:nth-child(3),
-th:last-child,
-td:last-child {
-    width: 15%;
-    text-align: center;
+.book-item {
+    padding: 15px 0;
+    border-bottom: solid 1px #ccc;
+}
+
+@media(min-width:768px) {
+    .book-item {
+        display: flex;
+    }
+    .col-md-2 {
+        flex: 0 0 20%;
+        max-width: 20%;
+        padding: 0 15px;
+    }
+    .col-md-10 {
+        flex: 0 0 80%;
+        max-width: 80%;
+        padding: 0 15px;
+    }
+}
+
+.back-btn {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0 30px;
+}
+
+.back-btn a {
+    margin-left: 10px;
 }

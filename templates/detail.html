@@ -17,26 +17,25 @@
     </header>
     <main>
         <div class="container">
-            <h1 class="grey-text">{{ keyword }}検索結果</h1>
+            <h1 class="grey-text">書籍詳細</h1>
             <div class="card-panel">
-                {% for book in data %}
                 <div class="book-item">
                     <div class="col-md-2">
                         <div class="book-img">
-                            <a href="detail?guid={{ book.guid }}&isbn={{ book.isbn }}"><img src="https://iss.ndl.go.jp/thumbnail/{{ book.isbn }}" onerror="this.onerror=null;this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNNSA4LjVjMC0uODI4LjY3Mi0xLjUgMS41LTEuNXMxLjUuNjcyIDEuNSAxLjVjMCAuODI5LS42NzIgMS41LTEuNSAxLjVzLTEuNS0uNjcxLTEuNS0xLjV6bTkgLjVsLTIuNTE5IDQtMi40ODEtMS45Ni00IDUuOTZoMTRsLTUtOHptOC00djE0aC0yMHYtMTRoMjB6bTItMmgtMjR2MThoMjR2LTE4eiIvPjwvc3ZnPg==';"></a>
+                            <img src="https://iss.ndl.go.jp/thumbnail/{{ isbn }}" onerror="this.onerror=null;this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNNSA4LjVjMC0uODI4LjY3Mi0xLjUgMS41LTEuNXMxLjUuNjcyIDEuNSAxLjVjMCAuODI5LS42NzIgMS41LTEuNSAxLjVzLTEuNS0uNjcxLTEuNS0xLjV6bTkgLjVsLTIuNTE5IDQtMi40ODEtMS45Ni00IDUuOTZoMTRsLTUtOHptOC00djE0aC0yMHYtMTRoMjB6bTItMmgtMjR2MThoMjR2LTE4eiIvPjwvc3ZnPg==';">
                         </div>
                     </div>
                     <div class="col-md-10">
-                        <h5><a href="detail?guid={{ book.guid }}&isbn={{ book.isbn }}">{{ book.title }}</a></h5>
-                        <div>著者：{{ book.author }}</div>
-                        <div>出版元：{{ book.publisher }}</div>
-                        {% for d in book.description %}
-                        <div>{{ d }}</div>
-                        {% endfor %}
-                        <div>ジャンル：{{ book.category }}</div>
+                        <h5>{{ title }}</h5>
+                        {% for detail in data %} {% for k,d in detail.items() %}
+                        <div>{{ k }}：{{ d }}</div>
+                        {% endfor %} {% endfor %}
                     </div>
                 </div>
-                {% endfor %}
+            </div>
+            <div class="back-btn">
+                <button onclick="history.back()" class="waves-effect waves-light btn-large">戻る</button>
+                <a href="https://www.amazon.co.jp/s?k={{ url }}&i=digital-text&__mk_ja_JP=カタカナ&ref=nb_sb_noss_1" class="waves-effect waves-light btn-large orange">amazonで探す</a>
             </div>
         </div>
     </main>
