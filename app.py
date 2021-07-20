@@ -26,11 +26,12 @@ def serch():
         publisher = request.form['publisher_name']
         url += '&publisher=' + urllib.parse.quote(publisher)
         keyword += ' ' + publisher + ' '
-    if request.form['mediatype']:
+    if request.form['mediatype'] != '0':
         url += '&mediatype=' + request.form['mediatype']
     range = request.form['range']
     keyword += '"'
     url += '&cnt=' + range
+    print(url)
     req = urllib.request.Request(url)
 
     with urllib.request.urlopen(req) as response:
