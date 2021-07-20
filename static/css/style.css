@@ -45,12 +45,12 @@ img {
     }
 }
 
-.back-btn {
+.flex-btn {
     display: flex;
     justify-content: center;
     margin: 20px 0 30px;
 }
 
-.back-btn a {
+.flex-btn a {
     margin-left: 10px;
 }
