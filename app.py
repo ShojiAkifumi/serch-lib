@@ -50,7 +50,7 @@ def serch():
         try:
             category = book.find('category').text
         except:
-            author = ''
+            category = ''
         try:
             publisher = book.find('{http://purl.org/dc/elements/1.1/}publisher').text
         except:
